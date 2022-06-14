@@ -31,9 +31,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
    TextEditingController text1controller = TextEditingController();
   TextEditingController text2controller = TextEditingController();
-  int t1 = 0;
-  int t2 = 0;
-  int result=0;
+  double t1 = 0;
+  double t2 = 0;
+  
+  double result =0;
  
  
 
@@ -78,8 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(onPressed: (){
 
 setState(() {
-  t1 =  int.parse(text1controller.text)   ;
-  t2 =  int.parse(text2controller.text)   ;
+  t1 =  double.parse(text1controller.text)   ;
+  t2 =  double.parse(text2controller.text)   ;
 
   result = t1 + t2;
   
@@ -92,8 +93,8 @@ setState(() {
 
 setState(() {
   
-   t1 =  int.parse(text1controller.text)   ;
-  t2 =  int.parse(text2controller.text)   ;
+   t1 =  double.parse(text1controller.text)   ;
+  t2 =  double.parse(text2controller.text)   ;
 
   result = t1 - t2;
   
@@ -104,8 +105,8 @@ setState(() {
                   ElevatedButton(onPressed: (){
 
 setState(() {
-   t1 =  int.parse(text1controller.text)   ;
-  t2 =  int.parse(text2controller.text)   ;
+   t1 =  double.parse(text1controller.text)   ;
+  t2 =  double.parse(text2controller.text)   ;
 
   result = t1 * t2;
   
@@ -118,10 +119,10 @@ setState(() {
 
 setState(() {
   
-   t1 =  int.parse(text1controller.text)   ;
-  t2 =  int.parse(text2controller.text)   ;
+  t1 =  double.parse(text1controller.text)   ;
+  t2 =  double.parse(text2controller.text)   ;
 
-  result = t1 - t2;
+  result = t1 / t2;
   
 });
 
