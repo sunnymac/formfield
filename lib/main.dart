@@ -29,12 +29,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
-
+   TextEditingController no1controller = TextEditingController();
+  TextEditingController no2controller = TextEditingController();
+  String abc = "";
  
 
   @override
   Widget build(BuildContext context) {
+
+  
  
     return Scaffold(
       appBar: AppBar(
@@ -51,24 +54,42 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
                Text(
-                'No1',
+                'Name',
               ),
               Container(
-                child: TextFormField(),
+                child: TextFormField(
+                  controller: no1controller,
+                  // onChanged: (value){
+                  //   setState(() {
+                  //     abc = value;
+                  //   });
+                  // },
+                ),
               ),
               SizedBox(height: 40,),
                Text(
-                'No2',
+                'Surname',
               ),
               Container(
-                child: TextFormField(),
+                child: TextFormField(
+                  controller: no2controller,
+                ),
               ),
                SizedBox(height: 40,),
-              ElevatedButton(onPressed: (){}, child: Text("SUM")),
+              ElevatedButton(onPressed: (){
+
+setState(() {
+  
+  
+});
+
+
+              }, child: Text("SUM")),
                SizedBox(height: 40,),
-              Text("5", style: TextStyle(
+              Text("${no1controller.text}  ${no2controller.text}", style: TextStyle(
                 fontSize: 50
-              ),)
+              ),),
+             
 
              
              
