@@ -29,8 +29,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-   TextEditingController no1controller = TextEditingController();
-  TextEditingController no2controller = TextEditingController();
+   TextEditingController text1controller = TextEditingController();
+  TextEditingController text2controller = TextEditingController();
+  int t1 = 0;
+  int t2 = 0;
+  int result=0;
  
  
 
@@ -51,49 +54,89 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
          
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-               Text(
-                'Name',
-              ),
+               
               Container(
                 child: TextFormField(
-                  controller: no1controller,
-                  onChanged: (value){
-                    setState(() {
-                      
-                    });
-                  },
+                  controller: text1controller,
+                 
                 ),
               ),
               SizedBox(height: 40,),
-               Text(
-                'Surname',
-              ),
+              
               Container(
                 child: TextFormField(
-                  controller: no2controller,
-                  onChanged: (a){
-                    setState(() {
-                      
-                    });
-                  },
+                  controller: text2controller,
+                
                 ),
               ),
                SizedBox(height: 40,),
-              ElevatedButton(onPressed: (){
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(onPressed: (){
 
 setState(() {
+  t1 =  int.parse(text1controller.text)   ;
+  t2 =  int.parse(text2controller.text)   ;
+
+  result = t1 + t2;
   
   
 });
 
 
-              }, child: Text("SUM")),
+                  }, child: Text("+")),
+                  ElevatedButton(onPressed: (){
+
+setState(() {
+  
+   t1 =  int.parse(text1controller.text)   ;
+  t2 =  int.parse(text2controller.text)   ;
+
+  result = t1 - t2;
+  
+});
+
+
+                  }, child: Text("-")),
+                  ElevatedButton(onPressed: (){
+
+setState(() {
+   t1 =  int.parse(text1controller.text)   ;
+  t2 =  int.parse(text2controller.text)   ;
+
+  result = t1 * t2;
+  
+  
+});
+
+
+                  }, child: Text("*")),
+                  ElevatedButton(onPressed: (){
+
+setState(() {
+  
+   t1 =  int.parse(text1controller.text)   ;
+  t2 =  int.parse(text2controller.text)   ;
+
+  result = t1 - t2;
+  
+});
+
+
+                  }, child: Text("/")),
+                ],
+              ),
+              
                SizedBox(height: 40,),
-              Text("${no1controller.text}  ${no2controller.text}", style: TextStyle(
-                fontSize: 50
-              ),),
+               Text("TOTAL"),
+               SizedBox(height: 40,),
+               Text("$result", style: TextStyle(
+                 fontSize: 50
+               ),)
+             
               
              
 
