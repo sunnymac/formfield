@@ -60,7 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
                
               Container(
                 child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "username",
+                    prefixIcon: Icon(Icons.person)
+                  ),
                   controller: text1controller,
+                  keyboardType: TextInputType.number,
                  
                 ),
               ),
@@ -68,7 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
               
               Container(
                 child: TextFormField(
+                  decoration: InputDecoration(prefixIcon: Icon(Icons.lock), hintText:"Password"),
+                  obscureText: true,
                   controller: text2controller,
+                   keyboardType: TextInputType.number,
                 
                 ),
               ),
