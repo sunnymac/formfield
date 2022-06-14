@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
    TextEditingController no1controller = TextEditingController();
   TextEditingController no2controller = TextEditingController();
-  String abc = "";
+ 
  
 
   @override
@@ -59,11 +59,11 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: TextFormField(
                   controller: no1controller,
-                  // onChanged: (value){
-                  //   setState(() {
-                  //     abc = value;
-                  //   });
-                  // },
+                  onChanged: (value){
+                    setState(() {
+                      
+                    });
+                  },
                 ),
               ),
               SizedBox(height: 40,),
@@ -73,6 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: TextFormField(
                   controller: no2controller,
+                  onChanged: (a){
+                    setState(() {
+                      
+                    });
+                  },
                 ),
               ),
                SizedBox(height: 40,),
@@ -89,6 +94,7 @@ setState(() {
               Text("${no1controller.text}  ${no2controller.text}", style: TextStyle(
                 fontSize: 50
               ),),
+              
              
 
              
